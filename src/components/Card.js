@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -21,17 +20,13 @@ const Image = styled.div`
     transform: scaleX(1.2);
   }
 `
-
-class Card extends React.Component {
-  render() {
-    const { content } = this.props
-    return <Item>
+const Card = ({ content, updateMovie }) => {
+  return <Item>
       <Link to={content.path}>
         <Image imagePath={content.imagePath} 
-        onClick={() => this.props.updateMovie(content.title)} />
+        onClick={() => updateMovie(content.title)} />
       </Link>
     </Item>
-  }
 }
 
 export default Card;

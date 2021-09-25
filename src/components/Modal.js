@@ -59,7 +59,7 @@ const Modal = (props) => {
     console.log(props)
     let youtubeVideo;
     contents.forEach(content => {
-      if (content.title == props.currentMovie) {
+      if (content.title === props.currentMovie) {
         youtubeVideo = content.youtubeVideo
       }
     })
@@ -72,7 +72,7 @@ const Modal = (props) => {
         <CloseBtn onClick={() => props.updateMovie("")}>X</CloseBtn>
       </Link>
       {props.content.map((con, idx) => {
-        if (con.title == props.currentMovie) {
+        if (con.title === props.currentMovie) {
           return <div
             style={{ width: "95%", position: "absolute", top: "58.5%", left: "3%" }} key={idx}>
             <Text style={{ fontSize: 20 }}>{con.title}</Text>
